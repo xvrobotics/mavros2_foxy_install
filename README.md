@@ -17,3 +17,40 @@ Clone this repository to your local machine:
 git clone https://github.com/your-username/mavros2_foxy_installation.git
 cd mavros2_foxy_installation
 ```
+
+### Step 2: Make the Script Executable
+
+Make the installation script executable:
+```
+chmod +x install_mavros_foxy.sh
+```
+### Step 3: Run the Installation Script
+
+Run the script to install MAVROS:
+```
+./mavros2_foxy_install.sh
+```
+This script will perform the following actions:
+
+    Update package lists.
+    Install necessary dependencies.
+    Set up the ROS 2 workspace.
+    Install MAVLink and MAVROS using rosinstall_generator and vcs.
+    Install GeographicLib datasets.
+    Build the workspace using colcon.
+
+### Step 4: Source the Workspace
+
+After the installation, source the workspace to your current session:
+```
+source ~/mavros2_ws/install/setup.bash
+```
+### Verification
+
+To verify the installation, you can run the following command to check if MAVROS nodes are available:
+```
+ros2 launch mavros px4.launch
+```
+### Troubleshooting
+
+If you encounter any issues during installation or usage, please check the ROS and MAVROS documentation or open an issue in this repository.
